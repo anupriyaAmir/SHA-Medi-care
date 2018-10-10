@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>SHA ONLINE CARE</title>
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery-migrate-1.1.1.js"></script>
+  <!-- <script src="js/superfish.js"></script> -->
+  <!-- <script src="js/jquery.equalheights.js"></script> -->
+  <!-- <script src="js/jquery.ui.totop.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script language="javascript" type="text/javascript" src="config.js"></script>
+  <script language="javascript" type="text/javascript" src="hide.js"></script>
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+  <header>
+  <div class="container_12">
+    <div class="grid_12">
+      <h1><img src="images/log.jpg" alt="" width="100px" height="100px" ><p><font  size="10" color="white"><b> SHA ONLINE CARE</b></p></font></h1>
+    </div>
+  </div>
+</header>
+<div class="container-fluid" style="background-color: #292929; height: 100px; padding-top: 5px;">
+<span class="userAuth authenticated pull-right">
+    <button type="button" class="btn btn-primary" data-toggle="modal" id="tr" data-target="#registerModal">Teacher Registration</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" id="sr" data-target="#registerModal2">Student Registration</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" id="log" data-target="#loginModal">Login</button>
+</span>
+  </div>
+  <!-- teacher modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" id="t_close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="registerModalLabel">Doctor Registration</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">First Name:</label>
+            <input type="text" class="form-control" id="registerFirstName">
+             <label for="recipient-name" class="control-label" id="username_error_message"></label>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Last Name:</label>
+            <input type="text" class="form-control" id="registerLastName">
+            <label for="recipient-name" class="control-label" id="userLastname_error_message"></label>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Email:</label>
+            <input type="text" class="form-control" id="registerEmail" >
+             <label for="recipient-name" class="control-label" id="email_error_message"></label>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="registerPassword">
+             <label for="recipient-name" class="control-label" id="password_error_message"></label>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Specialist in:</label>
+            <input type="text" class="form-control" id="clg_code">
+             <label for="recipient-name" class="control-label" id="clg_codeerror"></label>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Working Hospital/Clinic Name:</label>
+            <input type="text" class="form-control" id="registerConfirmPassword">
+             <label for="recipient-name" class="control-label" id="retype_password_error_message"></label>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" id="doRegister">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- student modal -->
+  <div class="modal fade" id="registerModal2" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" id="s_close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="registerModalLabel2">User Registration</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">First Name:</label>
+            <input type="text" class="form-control" id="registerFirstName2">
+             <label for="recipient-name" class="control-label" id="username_error_message2"></label>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Last Name:</label>
+            <input type="text" class="form-control" id="roll">
+            <label for="recipient-name" class="control-label" id="roll_error_message"></label>
+          </div>
+          <!-- <div class="form-group">
+            <label for="recipient-name" class="control-label">Register Number:</label>
+            <input type="text" class="form-control" id="reg">
+            <label for="recipient-name" class="control-label" id="reg_error_message"></label>
+          </div> -->
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Email:</label>
+            <input type="text" class="form-control" id="registerEmail2" >
+             <label for="recipient-name" class="control-label" id="email_error_message2"></label>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="registerPassword2">
+             <label for="recipient-name" class="control-label" id="password_error_message2"></label>
+          </div>
+
+          <div class="form-group">
+            <label for="message-text" class="control-label">Confirm Password:</label>
+            <input type="password" class="form-control" id="registerConfirmPassword2">
+             <label for="recipient-name" class="control-label" id="retype_password_error_message2"></label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal" id="s_close">Close</button> -->
+          <button type="submit" class="btn btn-primary" id="doRegister2">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- login modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" id="login_close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="loginModalLabel">Login</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Email:</label>
+            <input type="text" class="form-control" id="loginEmail">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" class="form-control" id="loginPassword">
+          </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="quickstart-password-reset" name="verify-email" onclick="sendPasswordReset()" >Reset Password</button>
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal" id="login_close">Close</button> -->
+          <button type="button" class="btn btn-primary" id="doLogin">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+  <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="messageModalLabel">Message</h4>
+        </div>
+        <div class="modal-footer">
+          <div class="pre-auth">
+            <!-- <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button> -->
+            <span class="">
+              <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button> -->
+              <!-- <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" >Login</button> -->
+            </span>
+          </div>
+          <div class="post-auth"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script  src="js/index.js"></script>
+</body>
+</html>

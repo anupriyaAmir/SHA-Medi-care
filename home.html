@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SHA ONLINE CARE</title>
+<meta charset="utf-8">
+<link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/slider.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/jquery.equalheights.js"></script>
+<script src="js/tms-0.4.1.js"></script>
+<script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script>
+$(window).load(function () {
+    $('.slider')._TMS({
+        show: 0,
+        pauseOnHover: false,
+        prevBu: '.prev',
+        nextBu: '.next',
+        playBu: false,
+        duration: 400,
+        preset: 'fade',
+        easing: 'easeOutQuad',
+        pagination: true, //'.pagination',true,'<ul></ul>'
+        pagNums: false,
+        slideshow: 4000,
+        numStatus: false,
+        banners: 'fade',
+        waitBannerAnimation: false,
+        progressBar: false
+    })
+});
+$(window).load(
+    function () {
+        $('.carousel1').carouFredSel({
+            auto: false,
+            prev: '.prev1',
+            next: '.next1',
+            width: 560,
+            items: {
+                visible: {
+                    min: 4,
+                    max: 4
+                },
+            },
+            responsive: false,
+            scroll: 1,
+            mousewheel: false,
+            swipe: {
+                onMouse: false,
+                onTouch: false
+            }
+        });
+    });
+</script>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<link rel="stylesheet" media="screen" href="css/ie.css">
+<![endif]-->
+</head>
+<body>
+<header>
+  <div class="container_12">
+    <div class="grid_12">
+      <h1><img src="images/log.jpg" alt="" width="100px" height="100px" ><p><font  size="10" color="white"><b> SHA ONLINE CARE</b></p></font></h1>
+    </div>
+  </div>
+  <nav>
+    <div class="container_12">
+      <div class="grid_12">
+        <ul class="sf-menu">
+          <li class="current"><a href="home.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a>
+
+          </li>
+          <li><a href="projects.html">DOCTORS</a></li>
+          <li><a href="services.html">MEDICINES</a></li>
+          <li><a href="contact.html">CONTACT US</a>
+          <ul>
+              <li><a href="index.html" id="sign-out" >LOGOUT</a></li>
+          </ul></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div id="content">
+  <div class="slider-relative" width="500px" height="500px">
+    <div class="slider-block" width="300px">
+      <div class="slider" width="300px">
+        <ul class="items">
+          <li><img src="images/ayur.jpg" alt="" height="400px" width="400px" height="500px">  </li>
+          <li><img src="images/hom.jpg" alt="" width="400px" height="400px"></li>
+          <li><img src="images/tm.png" alt="" width="300px" height="400px"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container_12">
+    <div class="grid_8"> <span>SHA care </div>
+    <div class="grid_4">
+    </div>
+  </div>
+</footer>
+</body>
+</html>
